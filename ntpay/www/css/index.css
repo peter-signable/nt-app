@@ -102,7 +102,7 @@ h1 {
   font-size: 18px;
   text-decoration: none;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 50px;
 }
 
 .btn-primary {
@@ -114,6 +114,38 @@ h1 {
   color: #fff;
   font-weight: bold;
 }
+
+.pay-button {
+  position: absolute;
+    bottom: 15px;
+    width: calc(100% - 40px);
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#barcode-scanner {
+  width: 100vw;
+  height: 40vh;
+  background: red;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 20;
+}
+
+#basket-list {
+  background: white;
+  height: calc(60vh - 75px);
+  overflow: scroll;
+}
+
+#settings-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
 
 @keyframes fade {
     from { opacity: 1.0; }
