@@ -1,0 +1,26 @@
+{
+  "name": "com.ntpayjunction.app",
+  "description": "Junction frontend!",
+  "main": "index.js",
+  "authors": [
+    "Liam Maddison"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "Junction",
+    "2017",
+    "swag"
+  ],
+  "homepage": "https://github.com/peter-signable/nt-app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "quagga": "^0.12.1"
+  }
+}
