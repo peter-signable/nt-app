@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import Quagga from 'quagga';
+import * as Quagga from 'quagga';
+
 
 declare var Quagga:any;
 
@@ -9,9 +10,6 @@ declare var Quagga:any;
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  options: BarcodeScannerOptions;
-
 
   constructor(public navCtrl: NavController) {
 
