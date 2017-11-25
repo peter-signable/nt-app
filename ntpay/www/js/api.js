@@ -1,10 +1,15 @@
-var url = 'http://signable.dev/';
+var url = 'http://junction2017.dev/';
 
 var API = {
   store: {
     token: null,
   },
-  signIn: function() {
+  bindEvents: function () {
+    $('.js-login-form').on('submit', this.signIn.bind(this));
+  },
+  signIn: function (e) {
+    var self = this;
+    e.preventDefault();
     $.ajax({
       url: url + 'login',
       method: 'post',
@@ -12,6 +17,16 @@ var API = {
         email: $('.js-email').val(),
         password: $('.js-password').val(),
       },
+      success: function (response) {
+        self.store.token = response.data.access_token;
+      },
     });
+
+    return false;
+  },
+  init: function () {
+    this.bindEvents();
   },
 };
+
+API.init();
