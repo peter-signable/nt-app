@@ -18,30 +18,19 @@
  */
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
 body {
+    font-family: "Avenir", sans-serif;
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
     background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
@@ -97,19 +86,102 @@ h1 {
     display:none;
 }
 
+.btn {
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.btn:hover {
+  filter: brightness(0.9);
+}
+
+.btn-primary {
+  background: #3fa9f5; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #3fa9f5 0%, #34fbb9 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #3fa9f5 0%,#34fbb9 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #3fa9f5 0%,#34fbb9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3fa9f5', endColorstr='#34fbb9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  border: 0;
+}
+
+.pay-button {
+  position: absolute;
+    bottom: 15px;
+    width: calc(100% - 40px);
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#barcode-scanner {
+  width: 100vw;
+  height: 40vh;
+  background: red;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.4);
+  position: relative;
+  z-index: 20;
+}
+
+#basket-list {
+  background: white;
+  height: calc(60vh - 75px);
+  overflow: scroll;
+}
+
+#settings-icon {
+  position: absolute;
+  z-index: 2000000;
+  font-size: 26px;
+  text-decoration: none;
+  right: 15px;
+  top: 15px;
+  color: white;
+  filter: brightness(0) invert(1);
+}
+
+#settings-icon:hover, #settings-icon:active {
+  filter: brightness(0) invert(0.8);
+}
+
+#scanning-hint {
+  text-align: center;
+    position: absolute;
+    top: calc(40vh - 30px);
+    z-index: 200000;
+    /* left: 50%; */
+    width: 100%;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 @-webkit-keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+input{
+  padding: 15px;
+  border-radius: 30px;
+  -webkit-appearance: none;
+  border: 1px solid #eee;
+  width: 100%;
+  outline: none;
+  font-family: "Avenir", sans-serif;
 }

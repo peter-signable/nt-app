@@ -18,11 +18,32 @@ var API = {
         password: $('.js-password').val(),
       },
       success: function (response) {
-        self.store.token = response.access_token;
+        self.store.token = response.data.access_token;
+        localStorage.setItem('token', self.store.token);
+        window.location = '/index.html';
       },
     });
 
     return false;
+  },
+  getProduct: function (barcodes, callback) {
+    var self = this;
+    $.ajax({
+      url: url + 'products/get-from-barcodes',
+      method: 'post',
+      data: {
+        barcodes: barcodes,
+      },
+      headers: {
+          "Authorization":"Bearer " + self.store.token,
+      },
+      success: function (response) {
+        console.log(response);
+        if (typeof callback == 'function') {
+          callback(response.data);
+        }
+      },
+    });
   },
   init: function () {
     this.bindEvents();
