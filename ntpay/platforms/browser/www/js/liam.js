@@ -47,7 +47,6 @@ var liamModule = {
   findProductByBarcodes: function () {
     var self = this;
     this.store.isSearching = true;
-    console.log('yoooo');
     var product = API.getProduct(self.store.barcodes, function (product) {
       console.log(product);
       if (product.length > 0) {

@@ -185,3 +185,7 @@ input{
   outline: none;
   font-family: "Avenir", sans-serif;
 }
+
+video{
+  width: 100%;
+}

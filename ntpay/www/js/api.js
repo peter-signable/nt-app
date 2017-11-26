@@ -12,7 +12,7 @@ var API = {
     e.preventDefault();
     $.ajax({
       url: url + 'login',
-      method: 'post',
+      method: 'POST',
       data: {
         email: $('.js-email').val(),
         password: $('.js-password').val(),
@@ -30,13 +30,18 @@ var API = {
     var self = this;
     $.ajax({
       url: url + 'products/get-from-barcodes',
-      method: 'post',
+      method: 'POST',
       data: {
         barcodes: barcodes,
       },
+      dataType: 'json',
       headers: {
-          "Authorization":"Bearer " + self.store.token,
+        'Access-Control-Allow-Origin': '*',
+        'Authorization': 'Bearer ' + localStorage.getItem('token'),
       },
+      // headers: {
+          // "Authorization":"Bearer " + self.store.token,
+      // },
       success: function (response) {
         console.log(response);
         if (typeof callback == 'function') {
